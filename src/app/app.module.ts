@@ -9,6 +9,7 @@ import { CreateNoticeComponent } from './notices/create-notice/create-notice.com
 import { FormsModule } from '@angular/forms';
 import { ViewNoticeComponent } from './notices/view-notice/view-notice.component';
 import { UpdateNoticeComponent } from './notices/update-notice/update-notice.component';
+import { DeleteNoticeComponent } from './notices/delete-notice/delete-notice.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UpdateNoticeComponent } from './notices/update-notice/update-notice.com
     NoticesComponent,
     CreateNoticeComponent,
     ViewNoticeComponent,
-    UpdateNoticeComponent
+    UpdateNoticeComponent,
+    DeleteNoticeComponent
   ],
   imports: [
     BrowserModule,

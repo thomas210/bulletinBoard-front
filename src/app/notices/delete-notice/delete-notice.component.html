@@ -1,0 +1,12 @@
+<p>delete-notice works!</p>
+
+<h3>Are you sure you want to remove this Notice?</h3>
+
+<div *ngIf="request">
+    <label>Title: {{request.title}}</label><br>
+    <label>Description: {{request.description}}</label><br>
+    <label>Publication Date: {{request.publicationDate}}</label><br>
+    <p>{{request.publicationDate | date: 'dd-MM-yyyy HH:mm'}}</p>
+</div>
+
+<button (click)="delete()">Yes</button>

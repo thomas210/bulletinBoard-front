@@ -35,4 +35,10 @@ export class NoticesService {
     return this.http.put<Notice>(_url, request);
   }
 
+  // Delete
+  deleteNotice(id: String): Observable<any> {
+    const _url = `${this.url}/${id}`;
+    return this.http.delete<any>(_url);
+  }
+
 }
