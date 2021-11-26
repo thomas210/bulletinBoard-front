@@ -1,22 +1,23 @@
-<h1>Notices</h1>
-
-<p>Página {{responseNotices.number + 1}} de {{responseNotices.totalPages}}</p>
-
-<br>
-
+<div style="display: flex; align-items: center;">
+    <h1 style="display: flex; align-items: center;">List of Notices</h1>
+</div>
 <table *ngIf="responseNotices">
     <thead>
-        <td>Title</td>
-        <td>Actions</td>
+        <td><strong>Title</strong></td>
+        <td><strong>Actions</strong></td>
     </thead>
     <tbody>
         <tr *ngFor="let notice of responseNotices.content">
-            <td> <a routerLink="/notices/view/{{notice.id}}" routerLinkActive="router-link-active" >{{notice.title}}</a> </td>
-            <td> <a routerLink="/notices/delete/{{notice.id}}" routerLinkActive="router-link-active" >Delete</a></td>
+            <td> {{notice.title}} </td>
+            <td> <a routerLink="/notices/view/{{notice.id}}" routerLinkActive="router-link-active" >View</a> | <a routerLink="/notices/delete/{{notice.id}}" routerLinkActive="router-link-active" >Delete</a></td>
         </tr>
     </tbody>
 </table>
 
-<button *ngIf="responseNotices.number > 0" (click)="listNoticesPage(responseNotices.number - 1)">Back</button>
+<p>Page {{responseNotices.number + 1}} of {{responseNotices.totalPages}}</p>
 
-<button *ngIf="(responseNotices.number + 1) < responseNotices.totalPages" (click)="listNoticesPage(responseNotices.number + 1)">Next</button>
+<div style="display: flex; justify-content: space-between;">
+    <button *ngIf="responseNotices.number > 0" (click)="listNoticesPage(responseNotices.number - 1)">Back</button>
+
+    <button *ngIf="(responseNotices.number + 1) < responseNotices.totalPages" (click)="listNoticesPage(responseNotices.number + 1)">Next</button>
+</div>

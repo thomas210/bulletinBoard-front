@@ -1,16 +1,6 @@
-<p>create-notice works!</p>
-
-<h3>Create</h3>
-
+<h1 style="display: flex; align-items: center;">Create a Notice</h1>
 <div>
     <label>Title: <input #model="ngModel" [(ngModel)]="request.title" required></label><br>
-    <label>Description: <input [(ngModel)]="request.description"></label>
-    <button *ngIf="!model.invalid" (click)="save()">Save</button>
-
-</div>
-
-<div *ngIf="response">
-    <label>{{response.title}}</label><br>
-    <label>{{response.description}}</label><br>
-    <label>{{response.publicationDate}}</label><br>
+    <label>Description: <input [(ngModel)]="request.description"></label><br>
+    <button class="card" *ngIf="!model.invalid" (click)="save()">Save</button>
 </div>

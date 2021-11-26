@@ -1,8 +1,8 @@
-<p>view-notice works!</p>
+<h1 style="display: flex; align-items: center;">Notice</h1>
 <div *ngIf="response">
-    <label>Title: {{response.title}}</label><br>
-    <label>Description: {{response.description}}</label><br>
-    <label>Publication Date: {{response.publicationDate}}</label><br>
-    <p>{{response.publicationDate | date: 'dd-MM-yyyy HH:mm'}}</p>
+    <label>Title: </label><strong>{{response.title}}</strong><br><br>
+    <label>Description: </label><strong>{{response.description}}</strong><br><br>
+    <label>Publication Date: </label><strong>{{response.publicationDate | date: 'dd-MM-yyyy HH:mm'}}</strong><br><br>
+    <label>Visualization Date: </label><strong>{{response.visualizationDate | date: 'dd-MM-yyyy HH:mm'}}</strong><br>
     <button routerLink="/notices/update/{{response.id}}">Edit</button>
 </div>

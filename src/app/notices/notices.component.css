@@ -1,0 +1,27 @@
+table {
+    text-align: center;
+    font-family: Montserrat, Arial, sans-serif;
+    color: #fafafa;
+    background:#1976D2;
+    margin: 0 auto;
+    width: 80%;
+}
+
+tr:nth-child(even) {
+    background:#b7b7a4;
+}
+
+button {
+    width: 100%;
+    background-color: #1976D2;
+    color: white;
+    padding: 6px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c7def5;
+  }

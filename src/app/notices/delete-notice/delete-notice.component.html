@@ -1,12 +1,16 @@
-<p>delete-notice works!</p>
-
-<h3>Are you sure you want to remove this Notice?</h3>
-
+<h1 style="display: flex; align-items: center;">Are you sure you want to remove this Notice?</h1>
 <div *ngIf="request">
+    <label>Title: </label><strong>{{request.title}}</strong><br><br>
+    <label>Description: </label><strong>{{request.description}}</strong><br><br>
+    <label>Publication Date: </label><strong>{{request.publicationDate | date: 'dd-MM-yyyy HH:mm'}}</strong><br><br>
+    <label>Visualization Date: </label><strong>{{request.visualizationDate | date: 'dd-MM-yyyy HH:mm'}}</strong><br>
+</div>
+
+<!-- <div *ngIf="request">
     <label>Title: {{request.title}}</label><br>
     <label>Description: {{request.description}}</label><br>
     <label>Publication Date: {{request.publicationDate}}</label><br>
     <p>{{request.publicationDate | date: 'dd-MM-yyyy HH:mm'}}</p>
-</div>
+</div> -->
 
 <button (click)="delete()">Yes</button>
