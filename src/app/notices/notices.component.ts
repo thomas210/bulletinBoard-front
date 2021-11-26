@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResponseNotices } from './notice.model';
+import { NoticesService } from './notices.service';
 
 @Component({
   selector: 'app-notices',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticesComponent implements OnInit {
 
-  constructor() { }
+  responseNotices!: ResponseNotices;
+
+  constructor(private noticeService: NoticesService) { }
 
   ngOnInit(): void {
+    this.listNoticesPage()
+  }
+
+  listNoticesPage(page: Number = 0): void {
+    this.noticeService.getNotices(page).subscribe(
+      res => this.responseNotices = res
+    )
   }
 
 }

@@ -1,1 +1,20 @@
-<p>notices works!</p>
+<h1>Notices</h1>
+
+<p>Página {{responseNotices.number + 1}} de {{responseNotices.totalPages}}</p>
+
+<br>
+
+<table *ngIf="responseNotices">
+    <thead>
+        <td>Title</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let notice of responseNotices.content">
+            <td> {{notice.title}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="listNoticesPage(responseNotices.number - 1)">Next</button>
+
+<button (click)="listNoticesPage(responseNotices.number + 1)">Next</button>
