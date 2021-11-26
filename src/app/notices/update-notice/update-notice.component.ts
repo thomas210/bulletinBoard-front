@@ -8,6 +8,8 @@ import { NoticesService } from '../notices.service';
   templateUrl: './update-notice.component.html',
   styleUrls: ['./update-notice.component.css']
 })
+
+// Update the notice, based on the notice id.
 export class UpdateNoticeComponent implements OnInit {
 
   request!: Notice;

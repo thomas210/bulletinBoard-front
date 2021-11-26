@@ -8,6 +8,8 @@ import { NoticesService } from '../notices.service';
   templateUrl: './delete-notice.component.html',
   styleUrls: ['./delete-notice.component.css']
 })
+
+// To delete the notice, first the notice data is shown and a confirmation is requested.
 export class DeleteNoticeComponent implements OnInit {
 
   request!: Notice;

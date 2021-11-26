@@ -22,6 +22,7 @@ export class CreateNoticeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Method to save warning and redirect to index screen.
   save() {
     this.noticesService.createNotice(this.request).subscribe(res => {
       this.response = res
