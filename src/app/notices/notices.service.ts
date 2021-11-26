@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { RequestCreate, ResponseCreate, ResponseNotices } from './notice.model';
+import { Notice, RequestCreate, ResponseNotices } from './notice.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,27 @@ export class NoticesService {
 
   constructor(private http: HttpClient) { }
 
+  // FindAll()
   getNotices(page: Number = 0): Observable<ResponseNotices> {
-    return this.http.get<ResponseNotices>(this.url+"?page="+page);
+    const _url = `${this.url}?page=${page}`
+    return this.http.get<ResponseNotices>(_url);
   }
 
-  createNotice(request: RequestCreate): Observable<ResponseCreate> {
-    return this.http.post<ResponseCreate>(this.url, request);
+  // Create
+  createNotice(request: RequestCreate): Observable<Notice> {
+    return this.http.post<Notice>(this.url, request);
+  }
+
+  // Read
+  readNotice(id: String): Observable<Notice> {
+    const _url = `${this.url}/${id}`;
+    return this.http.get<Notice>(_url);
+  }
+
+  // Update
+  updateNotice(id: String, request: RequestCreate): Observable<Notice> {
+    const _url = `${this.url}/${id}`;
+    return this.http.put<Notice>(_url, request);
   }
 
 }

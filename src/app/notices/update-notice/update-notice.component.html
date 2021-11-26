@@ -1,0 +1,9 @@
+<p>update-notice works!</p>
+
+<h3>Update</h3>
+
+<div>
+    <label>Title: <input #model="ngModel" [(ngModel)]="request.title" required></label><br>
+    <label>Description: <input [(ngModel)]="request.description"></label>
+    <button *ngIf="!model.invalid" (click)="update()">Update</button>
+</div>

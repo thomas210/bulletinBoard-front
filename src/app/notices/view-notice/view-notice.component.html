@@ -1,0 +1,8 @@
+<p>view-notice works!</p>
+<div *ngIf="response">
+    <label>Title: {{response.title}}</label><br>
+    <label>Description: {{response.description}}</label><br>
+    <label>Publication Date: {{response.publicationDate}}</label><br>
+    <p>{{response.publicationDate | date: 'dd-MM-yyyy HH:mm'}}</p>
+    <button routerLink="/notices/update/{{response.id}}">Edit</button>
+</div>

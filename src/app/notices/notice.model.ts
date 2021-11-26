@@ -18,10 +18,3 @@ export interface RequestCreate {
     title: string;
     description: string;
 }
-
-export interface ResponseCreate {
-    title: string;
-    description: string;
-    publicationDate: Date;
-    visualizationDate: Date;
-}

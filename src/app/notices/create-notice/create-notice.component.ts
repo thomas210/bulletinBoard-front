@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RequestCreate, ResponseCreate } from '../notice.model';
+import { Notice, RequestCreate } from '../notice.model';
 import { NoticesService } from '../notices.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class CreateNoticeComponent implements OnInit {
     description: ''
   }
 
-  response: ResponseCreate | undefined
+  response: Notice | undefined
 
   constructor(private noticesService: NoticesService, private router: Router) { }
 
